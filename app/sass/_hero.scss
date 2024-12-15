@@ -1,0 +1,98 @@
+.hero {
+    position: relative;
+    @media (min-width: 56.25em) {
+        flex-direction: row;
+        align-items: center;
+    }
+    @media (min-width: 64em) {
+        flex-direction: row;
+        padding-top: 5rem;
+        padding-inline: 2rem;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        z-index: -1;
+        background-color: $alt-color;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        z-index: -1;
+        background-color: #fff;
+    }
+    
+    &__image {
+        position: relative;
+        margin-inline: auto;
+        padding-bottom: 3rem;
+        width: 80%;
+        text-align: center;
+        margin-top: 5rem;
+        img {
+            width: 30rem;
+            position: relative;
+            filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, .8));
+            margin-inline: auto;
+            z-index: 2;
+        }
+        .txt {
+            font-size: 2.25rem;
+            font-weight: 700;
+            position: absolute;
+            white-space: nowrap;
+            font-family: $font-yuji;
+            z-index: 1;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: 0.3s;
+            opacity: 0;
+            animation: fade-out 1s forwards ease-in-out;
+            animation-delay: 1.7s;
+            @media (min-width: 40em) {
+                font-size: 3.2rem;
+            }
+            @media (min-width: 64em) {
+                white-space: wrap;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                max-width: 25rem;
+                
+            }
+        }
+        .txt-right {
+            bottom: 3.9375rem;
+            @media (min-width: 64em) {
+                transform: translate(38%, -50%);
+            }
+        }
+        .txt-left {
+            top: 0.35rem;
+            @media (min-width: 64em) {
+                top: 50%;
+                transform: translate(-130%, -50%);
+            }
+        }    
+        @media (min-width: 40em) {
+            margin-top: 3rem;
+        }    
+    }
+}
+
+
+@keyframes fade-out {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

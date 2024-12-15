@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Yuji+Mai&display=swap');
+
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:  "Roboto Condensed", sans-serif;
+    overflow-x: hidden;
+    font-size: 1rem;
+    font-weight: 400;
+    
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+    @media (min-width: 64rem) {
+        margin-inline: auto;
+    }
+}
+
+
+.section {
+    padding-block: 5rem 4rem
+}
+
+.main {
+    position: relative;
+    // top: 5rem;
+}
+
+.section__title {
+    font-family: $font-yuji;
+    color: $title-color;
+    padding-top: 1.5rem;
+    margin-bottom: 5rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: .9;
+    @media (min-width: 40em) {
+        font-size: 3rem;
+    }
+    @media (min-width: 64em) {
+        font-size: 4rem;
+    }
+}

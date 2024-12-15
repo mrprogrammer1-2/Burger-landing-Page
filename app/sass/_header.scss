@@ -1,0 +1,96 @@
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: $primary-color;
+    z-index: 100;
+    
+
+    &__logo {
+        font-family: $font-yuji;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: white;
+        filter: drop-shadow(2px 4px 6px black);
+    }
+    nav {
+        position: relative;
+        padding-inline: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 5rem; 
+    }
+    @media (max-width: 63.9375rem) {
+        .nav__menu {
+            position: fixed;
+            width: 100%;
+            top: -100%;
+            left: 0;
+            padding: 3rem 0;
+            background-color: $primary-color;
+            opacity: 0;
+            transition: 0.3s;
+        }
+    }
+    
+    .menu {
+        list-style: none;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+    @media (min-width: 64rem) {
+        .menu {
+            flex-direction: row;
+            column-gap: 2rem;
+        }
+    }
+    a {
+        font-weight: 500;
+        color: white;
+        position: relative;
+        padding: .5rem;
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -.74rem;
+            background-color: black;
+            width: 0;
+            height: 3px;
+            transition: 0.3s;
+        }
+        &:hover::after,
+        &.active::after {
+            width: 100%;
+        }
+    }
+    .close-menu {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    .open-menu {
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: white;
+    }
+    .show {
+        top: 0;
+        opacity: 1;
+    }
+    @media (min-width: 64rem) {
+        .close-menu, .open-menu {
+            display: none;
+        }
+        a::after {
+            bottom: -1.375rem;
+        }
+    }
+}

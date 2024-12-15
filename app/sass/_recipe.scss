@@ -1,0 +1,48 @@
+.recipe {
+    background-color: $alt-color;
+    padding-bottom: 8rem;
+
+    &__container {
+        @media (min-width: 40em) {
+            display: grid;
+            grid-template-columns: 24rem;
+            justify-content: center;
+            gap: 2rem 4rem;
+        }
+        @media (min-width: 64em) {
+            grid-template-columns: 24rem 34.37rem;
+            justify-content: center;
+        }
+        
+    }
+    &__ingredient {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        &:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
+
+        &__img {
+            width: 5rem;
+            filter: drop-shadow(7px 10px 8px rgba(0, 0, 0, 0.4));
+            @media (min-width: 64em) {
+                width: 7rem;
+            }
+        }
+    }
+    &__name {
+        font-family: $font-yuji;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: .5rem;
+    }
+    &__image {
+        width: 20rem;
+        margin-inline: auto;
+        filter: drop-shadow(3px 9px 11px rgba(0, 0, 0, 0.4));
+        @media (min-width: 64em) {
+            width: 34.37rem;
+        }
+    }
+}
